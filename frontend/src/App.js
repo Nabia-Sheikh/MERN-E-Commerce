@@ -12,6 +12,7 @@ import Profile from "./screens/Profile"
 import Shipping from "./screens/Shipping"
 import Payment from "./screens/Payment"
 import PlaceOrder from "./screens/PlaceOrder"
+import Orders from "./screens/Orders"
 const App = () => {
   return (
     <>
@@ -22,8 +23,11 @@ const App = () => {
             <Route path="/shipping" element={<Shipping />} />
             <Route path="/payment" element={<Payment />} />
             <Route path="/placeorder" element={<PlaceOrder />} />
-            <Route path ="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
+            <Route path="/order" element={<Orders />} >
+            <Route path=":id" element={<Orders />} />
+            </Route>
+              <Route path ="/login" element={<Login />} />
+            <Route path="/register" eleorderment={<Register />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/" element={<Home />} />
             <Route path="/product/:id" element={<Product />} />

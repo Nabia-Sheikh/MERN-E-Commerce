@@ -5,6 +5,7 @@ import { Container } from "react-bootstrap"
 import Home from "./screens/Home"
 import { Route, Routes } from "react-router-dom"
 import Product from "./screens/Product"
+import Cart from "./screens/Cart"
 const App = () => {
   return (
     <>
@@ -14,6 +15,9 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/product/:id" element={<Product />} />
+            <Route path="/cart" element={<Cart />}>
+              <Route path=":id" element={<Cart />} />
+            </Route>
           </Routes>
         </Container>
       </main>

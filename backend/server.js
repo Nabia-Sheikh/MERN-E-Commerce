@@ -4,17 +4,16 @@ const connectDB = require("./config/db")
 const { notFound, errorHandler } = require("./middleware/errorMiddleware")
 const colors = require("colors")
 const productRoute = require("./routes/productRoute")
+const userRoute = require("./routes/userRoute")
 
 const app = express()
-
-
 
 app.use(express.json())
 dotenv.config()
 connectDB()
 
-
 app.use("/api/products", productRoute)
+app.use("/api/users", userRoute)
 
 app.use(notFound)
 app.use(errorHandler)

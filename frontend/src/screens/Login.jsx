@@ -13,12 +13,11 @@ const Login = () => {
   const [password, setPassword] = useState("")
 
   const navigate = useNavigate()
+    const { search } = useLocation()
 
   const dispatch = useDispatch()
   const userLogin = useSelector((state) => state.userLogin)
   const { loading, error, userInfo } = userLogin
-
-  const { search } = useLocation()
 
   const redirect = search ? search.split("=")[1] : ""
   console.log(redirect)

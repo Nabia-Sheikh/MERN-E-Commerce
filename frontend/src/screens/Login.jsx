@@ -22,17 +22,17 @@ const Login = () => {
 
   const redirect = search ? search.split("=")[1] : ""
   console.log(redirect)
-  
+
   useEffect(() => {
     if (userInfo) {
       navigate(`/${redirect}`)
     }
   }, [userInfo, navigate, redirect])
 
-   const submitHandler = (e) => {
-     e.preventDefault()
-     dispatch(login(email, password))
-   }
+  const submitHandler = (e) => {
+    e.preventDefault()
+    dispatch(login(email, password))
+  }
 
   return (
     <FormContainer>
@@ -60,7 +60,7 @@ const Login = () => {
           ></Form.Control>
         </Form.Group>
 
-        <Button type="submit" variant="primary">
+        <Button type="submit" variant="primary" >
           Sign In
         </Button>
       </Form>

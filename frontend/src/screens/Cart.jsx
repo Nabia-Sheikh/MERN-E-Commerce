@@ -1,6 +1,6 @@
 import React, { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { Link, useParams } from "react-router-dom"
+import { Link, useNavigate, useParams } from "react-router-dom"
 import { Row, Col, Button, Card, Image, ListGroup, Form } from "react-bootstrap"
 import { useLocation } from "react-router-dom"
 import { addToCart, removeFromCart } from "../actions/cartAction"
@@ -9,7 +9,7 @@ import Message from "../Component/Message"
 const Cart = () => {
   const { id } = useParams()
   const { search } = useLocation()
-  // const navigate = useNavigate()
+  const navigate = useNavigate()
   const qty = search ? Number(search.split("=")[1]) : 1
   console.log(qty)
 
@@ -26,6 +26,10 @@ const Cart = () => {
 
   const removeFromCartHandler = (id) => {
     dispatch(removeFromCart(id))
+  }
+ 
+  const checkoutHandler = () => {
+    navigate("/login?redirect=shipping")
   }
 
   return (
@@ -106,6 +110,7 @@ const Cart = () => {
                 type="button"
                 className="btn-block"
                 disabled={cartItems.length === 0}
+                onClick={checkoutHandler}
               >
                 Proceed to Checkout
               </Button>

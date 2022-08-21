@@ -5,6 +5,7 @@ const { notFound, errorHandler } = require("./middleware/errorMiddleware")
 const colors = require("colors")
 const productRoute = require("./routes/productRoute")
 const userRoute = require("./routes/userRoute")
+const orderRoute = require("./routes/orderRoute")
 
 const app = express()
 
@@ -14,6 +15,7 @@ connectDB()
 
 app.use("/api/products", productRoute)
 app.use("/api/users", userRoute)
+app.use("/api/orders", orderRoute)
 
 app.use(notFound)
 app.use(errorHandler)

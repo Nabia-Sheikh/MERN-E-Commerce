@@ -12,7 +12,12 @@ import Profile from "./screens/Profile"
 import Shipping from "./screens/Shipping"
 import Payment from "./screens/Payment"
 import PlaceOrder from "./screens/PlaceOrder"
-import Orders from "./screens/Orders"
+import Order from "./screens/Order"
+import UserList from "./screens/UserList"
+import UserEdit from "./screens/UserEdit"
+import ProductList from "./screens/ProductList"
+import ProductEdit from "./screens/ProductEdit"
+import OrderList from "./screens/orderList"
 const App = () => {
   return (
     <>
@@ -20,19 +25,70 @@ const App = () => {
       <main className="py-3">
         <Container>
           <Routes>
-            <Route path="/shipping" element={<Shipping />} />
-            <Route path="/payment" element={<Payment />} />
-            <Route path="/placeorder" element={<PlaceOrder />} />
-            <Route path="/order" element={<Orders />} >
-            <Route path=":id" element={<Orders />} />
+            <Route
+              path="/register"
+              element={<Register />} />
+            <Route
+              path="/login"
+              element={<Login />} />
+            <Route
+              path="/search/:keyword"
+              element={<Home />} />
+            <Route
+              path="/"
+              element={<Home />} />
+            <Route
+              path="/page/:pageNumber"
+              element={<Home />} />
+            <Route
+              path="/search/:keyword/page/:pageNumber"
+              element={<Home />} />
+            <Route
+              path="/product/:id"
+              element={<Product />} />
+            <Route
+              path="/cart"
+              element={<Cart />}>
+              <Route
+                path=":id"
+                element={<Cart />} />
             </Route>
-              <Route path ="/login" element={<Login />} />
-            <Route path="/register" eleorderment={<Register />} />
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/" element={<Home />} />
-            <Route path="/product/:id" element={<Product />} />
-            <Route path="/cart" element={<Cart />}>
-              <Route path=":id" element={<Cart />} />
+            <Route
+              path="/admin/userlist"
+              element={<UserList />} />
+            <Route
+              path="/admin/user/:id/edit"
+              element={<UserEdit />} />
+            <Route
+              path="/admin/productlist"
+              element={<ProductList />} />
+            <Route
+              path="/admin/productlist/:pageNumber"
+              element={<ProductList />} />
+            <Route
+              path="/admin/product/:id/edit"
+              element={<ProductEdit />} />
+            <Route
+              path="/admin/orderlist"
+              element={<OrderList />} />
+            <Route
+              path="/shipping"
+              element={<Shipping />} />
+            <Route
+              path="/payment"
+              element={<Payment />} />
+            <Route
+              path="/placeorder"
+              element={<PlaceOrder />} />
+            <Route
+              path="/profile"
+              element={<Profile />} />
+            <Route
+              path="/order"
+              element={<Order />}>
+              <Route
+                path=":id"
+                element={<Order />} />
             </Route>
           </Routes>
         </Container>

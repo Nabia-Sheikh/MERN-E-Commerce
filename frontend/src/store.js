@@ -4,10 +4,15 @@ import { composeWithDevTools } from "redux-devtools-extension"
 import {
   productListReducer,
   productDetailsReducer,
+  productDeleteReducer,
+  productCreateReducer,
+  productUpdateReducer,
+  productReviewCreateReducer,
+  productTopRatedReducer,
 } from "./reducers/productReducer"
 import { cartReducer } from "./reducers/cartReducer"
-import { userDetailsReducer, userLoginReducer, userRegisterReducer, userUpdateProfileReducer } from "./reducers/userReducer"
-import { orderCreateReducer } from "./reducers/orderReducer"
+import { userDeleteReducer, userDetailsReducer, userListReducer, userLoginReducer, userRegisterReducer, userUpdateProfileReducer, userUpdateReducer } from "./reducers/userReducer"
+import { myOrderListReducer, orderCreateReducer, orderDeliverReducer, orderDetailsReducer, orderListReducer, orderPayReducer } from "./reducers/orderReducer"
 
 const reducer = combineReducers({
   productList: productListReducer,
@@ -18,6 +23,19 @@ const reducer = combineReducers({
   userDetails: userDetailsReducer,
   userUpdateProfile: userUpdateProfileReducer,
   orderCreate: orderCreateReducer,
+  orderDetails: orderDetailsReducer,
+  orderPay: orderPayReducer,
+  myOrderList: myOrderListReducer,
+  userList: userListReducer,
+  userDelete: userDeleteReducer,
+  userUpdate: userUpdateReducer,
+  productDelete: productDeleteReducer,
+  productCreate: productCreateReducer,
+  productUpdate: productUpdateReducer,
+  orderList: orderListReducer,
+  orderDeliver: orderDeliverReducer,
+  createProductReview: productReviewCreateReducer,
+  productTopRated: productTopRatedReducer,
 })
 
 const cartItemsFromStorage = localStorage.getItem("cartItems")

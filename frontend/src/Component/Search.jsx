@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState } from "react"
 import { Form, Button } from "react-bootstrap"
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from "react-router-dom"
 
 const Search = () => {
-      const navigate = useNavigate()
+  const navigate = useNavigate()
   const [keyword, setKeyword] = useState("")
-  
+
   const submitHandler = (e) => {
     e.preventDefault()
     if (keyword.trim()) {
@@ -16,7 +16,7 @@ const Search = () => {
   }
 
   return (
-    <Form onSubmit={submitHandler} inline>
+    <Form onSubmit={submitHandler} className="d-flex">
       <Form.Control
         type="text"
         name="q"

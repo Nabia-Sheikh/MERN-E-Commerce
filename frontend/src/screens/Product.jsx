@@ -5,7 +5,7 @@ import Rating from "../Component/Rating"
 import { useDispatch, useSelector } from "react-redux"
 import {
   listProductDetails,
-  productCreateReview
+  productCreateReview,
 } from "../actions/productActions"
 import { PRODUCT_CREATE_REVIEW_RESET } from "../constants/productConstants"
 import Loader from "../Component/Loader"
@@ -34,7 +34,7 @@ const Product = () => {
     loading: loadingProductReview,
     error: errorProductReview,
   } = createProductReview
-  
+
   useEffect(() => {
     if (successProductReview) {
       setRating(0)
@@ -152,7 +152,7 @@ const Product = () => {
           </Row>
           <Row>
             <Col md={6}>
-              <h2>Reviews</h2>
+              <h2 className="mt-3">Reviews</h2>
               {product.reviews.length === 0 && <Message>No Reviews</Message>}
               <ListGroup variant="flush">
                 {product.reviews.map((review) => (
@@ -191,7 +191,7 @@ const Product = () => {
                           <option value="5">5 - Excellent</option>
                         </Form.Control>
                       </Form.Group>
-                      <Form.Group controlId="comment">
+                      <Form.Group controlId="comment" className="mt-3">
                         <Form.Label>Comment</Form.Label>
                         <Form.Control
                           as="textarea"
@@ -204,6 +204,7 @@ const Product = () => {
                         disabled={loadingProductReview}
                         type="submit"
                         variant="primary"
+                        className="mt-3"
                       >
                         Submit
                       </Button>

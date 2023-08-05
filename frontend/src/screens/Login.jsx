@@ -13,7 +13,7 @@ const Login = () => {
   const [password, setPassword] = useState("")
 
   const navigate = useNavigate()
-    const { search } = useLocation()
+  const { search } = useLocation()
 
   const dispatch = useDispatch()
   const userLogin = useSelector((state) => state.userLogin)
@@ -59,7 +59,7 @@ const Login = () => {
           ></Form.Control>
         </Form.Group>
 
-        <Button type="submit" variant="primary" >
+        <Button type="submit" variant="primary" className="mt-3">
           Sign In
         </Button>
       </Form>
